@@ -21,6 +21,7 @@ body {
   padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  scroll-margin-top: 80px;
 }
 
 .section-title {
@@ -137,25 +138,6 @@ body {
   color: #2bb673;
   margin-bottom: 30px;
 }
-
-/* .cta-button {
-  background-color: #2bb673;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-}
-
-.cta-button:hover {
-  background-color: #1f9a5e;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-} */
 
 .header-image {
   width: 43%;
@@ -483,11 +465,11 @@ footer {
 
   #navbar {
     padding: 15px 20px;
-    justify-content: space-between; /* Asegura que el logo y el hamburger estén en extremos opuestos */
+    justify-content: space-between;
   }
   
   .logo {
-    z-index: 1002; /* Mismo z-index que el hamburger */
+    z-index: 1002;
   }
   
   .hamburger.active .bar:nth-child(2) {
