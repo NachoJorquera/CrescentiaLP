@@ -12,7 +12,7 @@ function toggleInfo(id) {
 let currentSlide = 0;
 const items = document.querySelectorAll('.carousel-item');
 const itemCount = items.length;
-const itemsToShow = 3;
+const itemsToShow = 2;
 
 // Inicializar carrusel
 function initCarousel() {
