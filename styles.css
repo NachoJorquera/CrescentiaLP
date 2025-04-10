@@ -534,7 +534,8 @@ footer {
     font-size: 1rem;
   }
   
-  .section {
+  .section,
+  .header-description {
     padding: 60px 15px;
   }
   
@@ -552,5 +553,9 @@ footer {
   
   .carousel-item img {
     max-width: 100px;
+  }
+
+  .footer {
+    padding: 20px;
   }
 }
