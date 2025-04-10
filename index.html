@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crescentia Consultores</title>
+  <link rel="icon" type="image/x-icon" href="images/logo-icon.png" />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -53,8 +54,8 @@
     <div class="oferta-principal">
       <h3>Procesos</h3>
       <p>Abordamos la gestión de procesos (BPM) desde su documentación y formalización hasta la creación de sistemas de gestión por procesos y su rediseño, aplicando las mejores prácticas específicas para cada sector industrial.</p>
-      <button class="more-info-btn" onclick="toggleInfo('oferta-principal-info')">Más información</button>
-      <div id="oferta-principal-info" class="info-box">
+      <!-- <button class="more-info-btn" onclick="toggleInfo('oferta-principal-info')">Más información</button> -->
+      <div id="oferta-principal-info" class="info-box" style="display: block;">
         <p>Nuestros servicios incluyen:</p>
         <ul>
           <li><span>Levantamiento y Documentación de Procesos:</span> Utilizamos el estándar BPMN para garantizar claridad y consistencia.</li>
@@ -69,7 +70,7 @@
         </ul>
       </div>
     </div>
-    
+    <h3 class="section-subtitle">Servicios Adicionales</h3>
     <div class="servicios-adicionales">
       <div class="servicio">
         <h3>Estrategia</h3>
@@ -146,29 +147,27 @@
 
   <!-- Sección Equipo -->
   <section id="equipo" class="section">
-    <h2 class="section-title">Nuestro Equipo</h2>
+    <h2 class="section-title">Equipo</h2>
     <div class="equipo-container">
       <div class="miembro">
         <div class="miembro-img">
-          <img src="https://via.placeholder.com/150" alt="Consultor 1">
+          <img src="images/sandra-contreras.jpeg" alt="Imagen de perfíl de Sandra Contreras">
         </div>
-        <h3>Ana Rodríguez</h3>
-        <p>Directora de Estrategia con más de 15 años de experiencia en consultoría de negocios.</p>
-        <button class="more-info-btn" onclick="toggleInfo('consultor1-info')">Más información</button>
-        <div id="consultor1-info" class="info-box">
-          <p>Ana es especialista en transformación organizacional y desarrollo de estrategias de crecimiento. Ha liderado proyectos para empresas de diversos sectores, incluyendo tecnología, finanzas y retail. Es MBA por IESE Business School y conferenciante habitual en foros de innovación empresarial.</p>
+        <h3>Sandra Contreras</h3>
+        <p>Ingeniero en Informática de la UTFSM y Magíster en Ingeniería Industrial de la U. de Chile. Postítulo en Six Sigma con certificación en el grado de Green Belt otorgada por Bank of America (USA)</p>
+        <div id="consultor1-info" class="info-box" style="display: block;">
+          <p>Posee una vasta experiencia en rediseño y mejoramiento de procesos, en la implementación de estrategias Six Sigma y Calidad Total de procesos y en gestión de proyectos. Ha liderado áreas de procesos en el sector financiero y de desarrollo tecnológico, entre las que destaca la Gerencia de Procesos de BankBoston Chile y Banco Itaú Chile. Ha realizado también diversos proyectos de consultoría de levantamiento y mejora de procesos en distintas empresas de servicio. A esto se añade una trayectoria académica de 8 años en la UTFSM dictando cátedras de Gestión de procesos de negocio y calidad, y seminarios de capacitación en el mismo ámbito.</p>
         </div>
       </div>
       
       <div class="miembro">
         <div class="miembro-img">
-          <img src="https://via.placeholder.com/150" alt="Consultor 2">
+          <img src="images/reinaldo-witto.png" alt="Imagen de perfil de Reinaldo Witto">
         </div>
-        <h3>Carlos Méndez</h3>
-        <p>Director de Tecnología especializado en transformación digital y soluciones innovadoras.</p>
-        <button class="more-info-btn" onclick="toggleInfo('consultor2-info')">Más información</button>
-        <div id="consultor2-info" class="info-box">
-          <p>Carlos cuenta con una trayectoria de más de 12 años implementando soluciones tecnológicas para optimizar procesos empresariales. Es ingeniero informático con un máster en IA y ha liderado proyectos de transformación digital en empresas de Fortune 500. Su enfoque combina visión estratégica con profundo conocimiento técnico.</p>
+        <h3>Reinaldo Witto</h3>
+        <p>Ingeniero en Informática de la UTFSM y Magíster (e) en Ingeniería Industrial de la U. de Chile. Postítulos en Gestión de Calidad de la Pontificia Universidad Católica de Chile y en Coaching Ontológico de Newfield – U. Del Desarrollo.</p>
+        <div id="consultor2-info" class="info-box" style="display: block;">
+          <p>Posee una importante experiencia en proyectos de consultoría gerencial desarrollada principalmente en empresas como E&Y Chile y Arthur Andersen. Vasta experiencia ejecutiva desarrollada en banca y utilities, específicamente en el ABN AMRO Bank, Banco Sud Americano (Scotiabank), Banco Estado y Aguas Andinas (Grupo Aguas). En este último grupo ocupó el cargo de Gerente General de Essal S.A., empresa sanitaria de las regiones décima y décimo cuarta. Una importante trayectoria académica desarrollada en la UTFSM, Universidad Gabriela Mistral y Universidad Diego Portales complementan su experiencia y conocimientos.</p>
         </div>
       </div>
     </div>
@@ -180,20 +179,20 @@
     <div class="carousel-container">
       <div class="carousel">
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150?text=Cliente1" alt="Cliente 1">
+          <img src="images/banpro.webp" alt="Logo de la empresa Banpro">
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150?text=Cliente2" alt="Cliente 2">
+          <img src="images/btg-pactual.webp" alt="Logo de la empresa BTG Pactual">
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150?text=Cliente3" alt="Cliente 3">
+          <img src="images/suez.webp" alt="Logo de la empresa Suez">
         </div>
         <div class="carousel-item">
-          <img src="https://via.placeholder.com/150?text=Cliente4" alt="Cliente 4">
+          <img src="images/megacentro.webp" alt="Logo de la empresa Megacentro">
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
           <img src="https://via.placeholder.com/150?text=Cliente5" alt="Cliente 5">
-        </div>
+        </div> -->
       </div>
       <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
       <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
