@@ -1,0 +1,54 @@
+<!-- Navbar -->
+<nav id="navbar">
+  <div class="logo">
+    <img src="/images/logo-image.png" alt="Logo">
+    <span>Crescentia</span>
+  </div>
+  <div class="hamburger">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div class="nav-links">
+    <a href="#oferta">Oferta</a>
+    <a href="#sobre-nosotros">Sobre Nosotros</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<script>
+  // Navbar fijo al hacer scroll
+  window.onscroll = function() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("navbar")!.classList.add("fixed");
+    } else {
+      document.getElementById("navbar")!.classList.remove("fixed");
+    }
+  };
+
+  // Hamburger menu toggle
+  const hamburger = document.querySelector<HTMLElement>('.hamburger')!;
+  const navLinks = document.querySelector('.nav-links')!;
+
+  if (hamburger) {
+    console.log('Hamburger menu found');
+  }
+
+  // Toggle menu on hamburger click
+  hamburger.addEventListener('click', function() {
+    console.log('Hamburger clicked');
+    this.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking on a nav link
+  const navLinksItems = navLinks.querySelectorAll('.nav-links a');
+  navLinksItems.forEach(item => {
+    item.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
