@@ -431,6 +431,11 @@ li span {
   background-color: var(--color-green-dark);
 }
 
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+}
+
 /* Footer */
 footer {
   background-color: var(--color-navy);

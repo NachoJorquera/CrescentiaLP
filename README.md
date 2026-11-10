@@ -30,10 +30,22 @@ nvm use 24
 
 ```sh
 npm install
+cp .dev.vars.example .dev.vars
 npm run dev
 ```
 
 The site is served on http://localhost:4321.
+
+## Environment variables
+
+The contact form reads these from `.dev.vars` locally and from the Worker's settings in production. `.dev.vars.example` lists them with test values.
+
+- `PUBLIC_TURNSTILE_SITE_KEY`: the Turnstile widget's sitekey, read when the page is built.
+- `TURNSTILE_SECRET_KEY`: the secret the server uses to verify Turnstile tokens.
+- `CONTACT_TO_EMAIL`: the inbox that receives the messages. It must be a verified destination address in Cloudflare Email Routing.
+- `CONTACT_FROM_EMAIL`: the sender, an address on the Email Routing domain.
+
+The email itself goes through the `EMAIL` binding declared in `wrangler.jsonc`. In local development that binding sends nothing: it prints each message to the dev server log and saves its text under `.wrangler/tmp/email/`.
 
 ## Scripts
 
