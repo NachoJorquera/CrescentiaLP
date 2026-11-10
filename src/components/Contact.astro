@@ -1,3 +1,7 @@
+---
+import { PUBLIC_TURNSTILE_SITE_KEY } from 'astro:env/client';
+---
+
 <!-- Sección Contacto -->
 <section id="contacto" class="section">
   <h2 class="section-title">Contacto</h2>
@@ -19,20 +23,47 @@
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
       </div>
+      <input type="text" name="website" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cf-turnstile" data-sitekey={PUBLIC_TURNSTILE_SITE_KEY} data-appearance="interaction-only" data-language="es"></div>
       <button type="submit" class="submit-btn">Enviar mensaje</button>
     </form>
   </div>
 </section>
 
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
+  import { actions } from 'astro:actions';
+
+  interface TurnstileWindow extends Window {
+    turnstile?: { reset: () => void };
+  }
+
+  const SUCCESS_MESSAGE = '¡Gracias por tu mensaje! Te contactaremos pronto.';
+  const ERROR_MESSAGE = 'No pudimos enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.';
+
+  const contactForm = document.getElementById('contacto-form') as HTMLFormElement;
+  const submitButton = contactForm.querySelector<HTMLButtonElement>('.submit-btn')!;
+
+  // Returns whether the action accepted the message; a network failure counts as a rejection.
+  async function sendContactForm(formData: FormData): Promise<boolean> {
+    try {
+      const { error } = await actions.contact(formData);
+      return !error;
+    } catch (requestError) {
+      console.error('Contact form request failed', requestError);
+      return false;
+    }
+  }
+
   // Manejar envío del formulario
-  (document.getElementById('contacto-form') as HTMLFormElement).addEventListener('submit', function(event) {
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-
-    // Aquí puedes agregar código para procesar el formulario
-    // Por ejemplo, enviar los datos a un servidor
-
-    alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-    this.reset();
+    submitButton.disabled = true;
+    const sent = await sendContactForm(new FormData(contactForm));
+    alert(sent ? SUCCESS_MESSAGE : ERROR_MESSAGE);
+    if (sent) contactForm.reset();
+    (window as TurnstileWindow).turnstile?.reset();
+    submitButton.disabled = false;
   });
 </script>

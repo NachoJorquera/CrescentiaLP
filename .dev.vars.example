@@ -1,0 +1,11 @@
+# Copy to .dev.vars (git-ignored) and replace the placeholders.
+
+# Turnstile test keys. This sitekey always passes without showing the widget.
+# Secret 1x0000000000000000000000000000000AA always passes; 2x0000000000000000000000000000000AA always fails.
+PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000BB
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+
+# The EMAIL binding (wrangler.jsonc) only delivers to addresses verified in Email Routing,
+# and CONTACT_FROM_EMAIL must belong to the Email Routing domain. Locally the binding is simulated.
+CONTACT_TO_EMAIL=you@example.com
+CONTACT_FROM_EMAIL=contacto@crescentia.cl
